@@ -1,0 +1,15 @@
+STACK - Abstract Data Structure - implementation using basic python + OOP
+
+1. The name stack data structure resembles a pile of objects, stack of papers, or a tower of blocks, where
+    adding and removing of items occur only at the top of the pile.
+2. A stack an abstract linear data type. collection of objects that supports fast last=in, first-out (LIFO)
+    semantics for iinserts and deletes
+3. Unlike lists or arrays, stacks typically dont allow for random access to the objects they contain.
+4. The insert and delete operations are also often called push and pop operations
+5. Stacks and Queues are both linear collections of items.
+    a. However, in a queue the least recently added item is removed first, following the First in First Out or FIFO
+    b. On the other hand in a stack the most recently added item is removed in the begining following, following the LIFO
+
+
+A real-life example of a stack is a pile of heavy and precious plates, all kept on top of the other. If you wish to add a plate or 
+remove one , you can do that only from the top. However, if you wish to remove a lower plate from the stack, you have to remove the topmost plates one by one, in order to 

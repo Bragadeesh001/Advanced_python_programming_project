@@ -4,7 +4,7 @@
 1. The name stack data structure resembles a pile of objects, stack of papers, or a tower of blocks, where
     adding and removing of items occur only at the top of the pile.
 2. A stack an abstract linear data type. collection of objects that supports fast last=in, first-out (LIFO)
-    semantics for iinserts and deletes
+    semantics for inserts and deletes
 3. Unlike lists or arrays, stacks typically dont allow for random access to the objects they contain.
 4. The insert and delete operations are also often called push and pop operations
 5. Stacks and Queues are both linear collections of items.
@@ -70,3 +70,127 @@ s.append('code')
 
 # print
 print(s)
+
+# pop
+print(s.pop())
+
+
+'''
+B. The list Build-in
+    1. Using collections deque
+    2. Python contains a module names collections. This comprises of deque class which is a double-ended Queues
+        that supports inserting and removing elements from either ends.
+    3. Because deques support adding and removing elements from either end equally well, they can serve both as queues
+    and stacks.
+'''
+
+from collections import deque
+q = deque()
+
+q.append('eat')
+q.append('sleep')
+q.append('code')
+
+print(q)
+print(q[0])
+
+print(q.pop())
+
+
+'''
+c. Custom method using classes/objects
+1. The following stack implementation assumes that the end of the list will hold the top element of the stack.
+2. As the stack grows (as push operations occur), new items will be added on the end of the list
+3. pop operations will manipulate that same end.
+
+'''
+
+# define stack class
+class StackTOPn():
+    def __init__(self):
+        self.items = []
+
+    # for printing the stack elemnts
+    def __str__(self):
+        return ' '.join([str(i) for i in self.items])
+    
+    def isEmpty(self):
+        return self.items == []
+
+    def push(self, item):
+        self.items.append(item)
+
+    def pop(self):
+        return self.items.pop()
+    
+    def peek(self):
+        return self.items[len(self.items) - 1]
+    
+    def size(self):
+        return len(self.items)
+    
+    def display_all_items(self):
+        return (self.items)
+        
+# Initialize the stack
+s = StackTOPn()
+print(s)
+
+# Check list is empty
+print(s.isEmpty())
+
+# all elements
+s.push('First')
+s.push('second')
+s.push('third')
+print(s)
+
+# displaying all items
+for item in s.display_all_items():
+    print(item)
+
+print(s.display_all_items())
+
+# Print the recent item inserted
+print(s.peek())
+
+# Add a boolean
+s.push(True)
+
+# size of the stack
+print(s.size())
+
+s.pop()
+
+print(s.display_all_items())
+
+
+## EXERCISE
+# use Stack to reverse the character in string
+
+class stack_reverse():
+    def __init__(self):
+        self.string=[]
+        self.reverse=[]
+
+    def add_string(self, word):
+        return self.string.append(word)
+    
+    def reverser(self):
+        for i in range(len(self.string)):
+            self.reverse.append(self.string.pop())
+        return ' '.join(self.reverse)
+
+    
+
+stack_string_reverse = stack_reverse()
+
+## adding string
+lamda_append=(lambda s: stack_string_reverse.add_string(s))
+words = 'hello'
+for char in words:
+    lamda_append(char)
+print(stack_string_reverse.string)
+print(stack_string_reverse.reverser())
+
+
